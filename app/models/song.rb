@@ -1,4 +1,4 @@
-
+require "pry"
 class Song < ActiveRecord::Base
   belongs_to :artist
   belongs_to :genre
@@ -8,6 +8,7 @@ class Song < ActiveRecord::Base
   end
 
   def drake_made_this
+    binding.pry
     if Artist.all.include?("Drake")
       drake.songs << self
     else
