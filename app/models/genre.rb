@@ -11,8 +11,10 @@ class Genre < ActiveRecord::Base
   end
 
   def all_artist_names
-    artist_array = []
-    self.artists.each do |artist|
-      artist_array << artist.name
+    #artist_array = []
+    self.artists.map do |artist|
+      #artist_array << artist.name
+      artist.name
+    end
   end
 end
