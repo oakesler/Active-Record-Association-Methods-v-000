@@ -9,7 +9,7 @@ class Song < ActiveRecord::Base
 
   def drake_made_this
     binding.pry
-    if drake
+    if Artist.name(drafe)
     else
       drake = Artist.create(name: "Drake")
       drake.songs << self
