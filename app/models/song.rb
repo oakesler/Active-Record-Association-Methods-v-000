@@ -8,10 +8,11 @@ class Song < ActiveRecord::Base
   end
 
   def drake_made_this
-    binding.pry
-    if Artist.name(drafe)
-    else
+    drake = Artist.find_by(name: "Drake")
+    if !drake
       drake = Artist.create(name: "Drake")
+      drake.songs << self
+    else 
       drake.songs << self
     end
   end
